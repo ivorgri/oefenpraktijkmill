@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     async onSubmit(e) {
-      const response = await this.$axios.$post('http://oefenpraktijkmill.ivrdesign.nl/contact-form.php')
+      const response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/contact-form.php')
       console.log(response);
     },
   },
