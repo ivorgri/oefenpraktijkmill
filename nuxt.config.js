@@ -1,4 +1,13 @@
 module.exports = {
+
+  /*
+  ** Axios
+  */
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  axios: {
+  },
   /*
   ** Headers of the page
   */
