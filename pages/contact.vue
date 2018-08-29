@@ -38,7 +38,18 @@ export default {
   },
   methods: {
     async onSubmit(e) {
-      const response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/contact-form.php')
+      const data = {
+        firstname: this.firstname,
+        lastname: this.lastname,
+        email: this.email,
+      };
+      console.log(data);
+      let response;
+      try {
+        response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/contact-form.php', data);
+      } catch (error) {
+        console.log('An error occured', error);
+      }
       console.log(response);
     },
   },
