@@ -1,5 +1,4 @@
 module.exports = {
-
   /*
   ** Axios
   */
@@ -7,12 +6,20 @@ module.exports = {
     '@nuxtjs/axios',
   ],
   axios: {
+    debug: true,
   },
+  /*
+  ** CSS
+  */
+  css: [
+    '@/assets/normalize.css',
+    '@/assets/style.scss',
+  ],
   /*
   ** Headers of the page
   */
   head: {
-    title: 'oefenpraktijkmill',
+    title: 'Oefenpraktijk Mill',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
