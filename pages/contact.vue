@@ -18,6 +18,7 @@
       <input type="submit" value="Verstuur verzoek">
 
     </form>
+    <span v-if="errorMessage">{{ errorMessage }}</span>
     </div>
   </section>
 </template>
@@ -34,6 +35,7 @@ export default {
       email: '',
       firstname: '',
       lastname: '',
+      errorMessage: '',
     };
   },
   methods: {
@@ -46,9 +48,11 @@ export default {
       console.log(data);
       let response;
       try {
+        this.errorMessage = '';
         response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/contact-form.php', data);
       } catch (error) {
         console.log('An error occured', error);
+        this.errorMessage = 'Er is iets fout gegaan met het versturen van de mail. Probeer het nog eens. Mocht het nogmaals fout gasn, neem dan contact op met ...@...nl.';
       }
       console.log(response);
     },
