@@ -85,9 +85,9 @@
     @mail($email_company, $email_subject, $email_message_to_company, $headers);
 
     // Send e-mail to sender
-    $headers = 'From: '.$email_company."\r\n".
+    /* $headers = 'From: '.$email_company."\r\n".
         'Reply-To: '.$email_company."\r\n" .
         'X-Mailer: PHP/' . phpversion();
-    @mail($email_client, $email_subject, $email_message_to_client, $headers);
+    @mail($email_client, $email_subject, $email_message_to_client, $headers); */
   };
 ?>
