@@ -1,6 +1,18 @@
 $break-small: 320px;
 $break-large: 900px;
 
+/* font-family: Poppins */
+@font-face {
+	font-family: 'Poppins';
+  src: url('~assets/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+}
+
+/* font-family: Raleway */
+@font-face {
+	font-family: 'Raleway';
+  src: url('~assets/fonts/Raleway/Raleway-Medium.ttf') format('truetype');
+}
+
 #__nuxt {
   @media screen and (max-width: $break-small) {
     width: 100%;
@@ -9,10 +21,16 @@ $break-large: 900px;
     width: $break-large;
     margin: auto;
   }
+
+  font-family: 'Poppins', Fallback, sans-serif;
 }
 
 #__layout {
   padding: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', Fallback, sans-serif;
 }
 
 /* nav {

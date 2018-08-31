@@ -1,9 +1,11 @@
 <template>
   <div id="main-content">
     <header>
-      <h1>
-        Oefenpraktijk Mill
-      </h1>
+      <nuxt-link to="/">
+        <h1>
+          Oefenpraktijk Mill
+        </h1>
+      </nuxt-link>
       <!-- <nav>
         <a v-for="page in $store.getters.pages"
           :key="page.id"
@@ -20,6 +22,7 @@
       <address>
         Bedrijfsadres
       </address>
+      <nuxt-link to="/contact">Neem contact op</nuxt-link>
     </footer>
   </div>
 </template>
