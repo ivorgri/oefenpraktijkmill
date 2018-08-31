@@ -17,8 +17,8 @@
 
   if (in_array($origin, $allowed_domains)) {
     header("Access-Control-Allow-Methods: GET, POST");
-    header("Access-Control-Allow-Origin: " . $origin);
-    // header("Access-Control-Allow-Origin: *");
+    // header("Access-Control-Allow-Origin: " . $origin);
+    header("Access-Control-Allow-Origin: *");
   }
 
   // https://www.freecontactform.com/email_form.php

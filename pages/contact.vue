@@ -49,7 +49,7 @@ export default {
       let response;
       try {
         this.errorMessage = '';
-        response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/contact-form.php', data);
+        response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/stuur-bericht.php', data);
       } catch (error) {
         console.log('An error occured', error);
         this.errorMessage = 'Er is iets fout gegaan met het versturen van de mail. Probeer het nog eens. Mocht het nogmaals fout gasn, neem dan contact op met ...@...nl.';
@@ -59,35 +59,4 @@ export default {
   },
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
 
