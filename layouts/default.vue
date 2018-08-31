@@ -6,7 +6,12 @@
           Oefenpraktijk Mill
         </h1>
       </nuxt-link>
-      <nav>
+      <div id="dropdown-menu" :class="{ 'change': showNavMenu }" @click="toggleNavMenu">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
+      </div>
+      <nav v-if="showNavMenu">
         <a v-for="page in $store.getters.pages"
           :key="page.id"
           :href="page.slug"
@@ -26,4 +31,32 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+     window.addEventListener('resize', this.handleResize);
+  },
+  data() {
+    return {
+      showNavMenu: undefined
+    };
+  },
+  methods: {
+    toggleNavMenu () {
+      if(this.showNavMenu === undefined) {
+        this.showNavMenu = true;
+      } else {
+        this.showNavMenu = !this.showNavMenu;
+      }
+    },
+    handleResize() {
+      console.log('Resizing!');
+    },
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+}
+</script>
 
