@@ -16,13 +16,18 @@
   ];
 
   if (in_array($origin, $allowed_domains)) {
-    header("Access-Control-Allow-Methods: GET, POST");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     // header("Access-Control-Allow-Origin: " . $origin);
     header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: content-type");
   }
+
+  var_dump($_POST);
 
   // https://www.freecontactform.com/email_form.php
   if(isset($_POST['email'])) {
+
+
 
     function errorMessage($error) {
       echo "We are very sorry, but there were error(s) found with the form you submitted. ";
@@ -79,15 +84,25 @@
       .clean_string($firstname)." ".clean_string($lastname).".";
 
     // Send e-mail to Oefenpraktijk Mill
-    $headers = 'From: '.$email_client."\r\n".
-        'Reply-To: '.$email_client."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-    @mail($email_company, $email_subject, $email_message_to_company, $headers);
+    // $headers = 'From: '.$email_client;
+    // $headers = 'From: ivorgrisel@hotmail.com';
+    //@mail($email_company, $email_subject, $email_message_to_company, $headers);
+    // mail($email_company, $email_subject, $email_message_to_company);
+
+    // the message
+    $msg = "First line of text\nSecond line of text";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("ivorgrisel@gmail.com","My subject",$msg);
 
     // Send e-mail to sender
     /* $headers = 'From: '.$email_company."\r\n".
         'Reply-To: '.$email_company."\r\n" .
         'X-Mailer: PHP/' . phpversion();
     @mail($email_client, $email_subject, $email_message_to_client, $headers); */
+    print_r("Test");
   };
 ?>

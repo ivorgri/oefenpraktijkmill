@@ -45,16 +45,19 @@ export default {
         lastname: this.lastname,
         email: this.email,
       };
-      console.log(data);
       let response;
       try {
         this.errorMessage = '';
-        response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/stuur-bericht.php', data);
+        const formData = new FormData();
+        formData.append('firstname', this.firstname);
+        formData.append('lastname', this.lastname);
+        formData.append('email', this.email);
+        response = await this.$axios.$post('https://oefenpraktijkmill.ivrdesign.nl/stuur-bericht.php', formData);
       } catch (error) {
         console.log('An error occured', error);
-        this.errorMessage = 'Er is iets fout gegaan met het versturen van de mail. Probeer het nog eens. Mocht het nogmaals fout gasn, neem dan contact op met ...@...nl.';
+        this.errorMessage = 'Er is iets fout gegaan met het versturen van de mail. Probeer het nog eens. Mocht het nogmaals fout gaan, neem dan contact op met ...@...nl.';
       }
-      console.log(response);
+      console.log('Response', response)
     },
   },
 }
