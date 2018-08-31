@@ -33,6 +33,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', Fallback, sans-serif;
 }
 
+.title {
+  width: 275px;
+  min-width: 275px;
+  float: left;
+}
+
+main {
+  clear: both;
+}
+
 /* nav {
   @supports (display: flex) {
     display: flex;
