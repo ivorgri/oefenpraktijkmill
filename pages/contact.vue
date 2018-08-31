@@ -1,25 +1,23 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        Contact formulier
-      </h1>
-      <form v-on:submit.prevent="onSubmit">
+  <section>
+    <h2 class="title">
+      Contact formulier
+    </h2>
+    <form v-on:submit.prevent="onSubmit">
 
-      <label for="fname">Voornaam</label>
-      <input type="text" id="fname" name="firstname" placeholder="Uw voornaam" v-model="firstname">
+    <label for="fname">Voornaam</label>
+    <input type="text" id="fname" name="firstname" placeholder="Uw voornaam" v-model="firstname">
 
-      <label for="lname">Achternaam</label>
-      <input type="text" id="lname" name="lastname" placeholder="Uw achternaam" v-model="lastname">
+    <label for="lname">Achternaam</label>
+    <input type="text" id="lname" name="lastname" placeholder="Uw achternaam" v-model="lastname">
 
-      <label for="email">E-mail adres</label>
-      <input type="email" id="email" name="email" placeholder="E-mail adres" v-model="email">
+    <label for="email">E-mail adres</label>
+    <input type="email" id="email" name="email" placeholder="E-mail adres" v-model="email">
 
-      <input type="submit" value="Verstuur verzoek">
+    <input type="submit" value="Verstuur verzoek">
 
-    </form>
-    <span v-if="errorMessage">{{ errorMessage }}</span>
-    </div>
+  </form>
+  <span v-if="errorMessage">{{ errorMessage }}</span>
   </section>
 </template>
 

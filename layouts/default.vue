@@ -1,15 +1,18 @@
 <template>
   <div id="main-content">
-    <!-- <header>
-      <nav>
+    <header>
+      <h1>
+        Oefenpraktijk Mill
+      </h1>
+      <!-- <nav>
         <a v-for="page in $store.getters.pages"
           :key="page.id"
           :href="page.slug"
           class="nav-item">
           {{ page.title.rendered }}
         </a>
-      </nav>
-    </header> -->
+      </nav> -->
+    </header>
     <nuxt/>
     <footer>
       <a href="mailto:">Verstuur e-mail</a>

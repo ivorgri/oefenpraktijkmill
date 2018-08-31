@@ -1,8 +1,5 @@
 <template>
   <main>
-    <h1>
-      Oefenpraktijk Mill
-    </h1>
     <p>
       Beschrijving
     </p>
