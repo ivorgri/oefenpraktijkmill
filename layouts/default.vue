@@ -6,7 +6,7 @@
           Oefenpraktijk Mill
         </h1>
       </nuxt-link>
-      <div id="dropdown-menu" :class="{ 'change': showNavMenu }" @click="toggleNavMenu">
+      <div id="dropdown-menu" :class="{ 'change': toggleAnimation }" @click="toggleNavMenu">
         <div id="bar1"></div>
         <div id="bar2"></div>
         <div id="bar3"></div>
@@ -39,19 +39,26 @@ export default {
   },
   data() {
     return {
-      showNavMenu: undefined
+      showNavMenu: undefined,
+      toggleAnimation: false,
     };
   },
   methods: {
     toggleNavMenu () {
       if(this.showNavMenu === undefined) {
         this.showNavMenu = true;
+        this.toggleAnimation = true;
       } else {
         this.showNavMenu = !this.showNavMenu;
+        this.toggleAnimation = this.showNavMenu;
       }
     },
     handleResize() {
-      console.log('Resizing!');
+      if(document.documentElement.clientWidth > 649) {
+        this.showNavMenu = true;
+      } else {
+        this.showNavMenu = false;
+      }
     },
   },
   beforeDestroy() {
