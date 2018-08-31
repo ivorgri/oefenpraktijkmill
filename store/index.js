@@ -24,7 +24,6 @@ const createStore = () => {
       async nuxtServerInit ({ commit }) {
         let { data } = await axios.get(pagesApi);
         commit('SET_PAGES', data);
-        console.log(data);
       }
     }
   })
