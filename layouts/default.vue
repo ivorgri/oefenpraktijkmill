@@ -35,23 +35,19 @@
 <script>
 export default {
   mounted() {
-     window.addEventListener('resize', this.handleResize);
+    mounted ()
+    window.addEventListener('resize', this.handleResize);
   },
   data() {
     return {
-      showNavMenu: undefined,
+      showNavMenu: true,
       toggleAnimation: false,
     };
   },
   methods: {
     toggleNavMenu () {
-      if(this.showNavMenu === undefined) {
-        this.showNavMenu = true;
-        this.toggleAnimation = true;
-      } else {
-        this.showNavMenu = !this.showNavMenu;
-        this.toggleAnimation = this.showNavMenu;
-      }
+      this.showNavMenu = !this.showNavMenu;
+      this.toggleAnimation = this.showNavMenu;
     },
     handleResize() {
       if(document.documentElement.clientWidth > 649) {

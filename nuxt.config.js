@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 module.exports = {
   /*
   ** Axios
@@ -49,6 +51,22 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+  /*
+  ** Generate configuration
+  */
+  generate: {
+    routes: () => {
+      return axios.get('http://oefenpraktijkmill.ivrdesign.nl/wp-json/wp/v2/pages')
+      .then((res) => {
+        return res.data.map((page) => {
+          return {
+            route: `/${page.slug}`,
+            payload: page
+          }
+        })
+      })
     }
   }
 }
