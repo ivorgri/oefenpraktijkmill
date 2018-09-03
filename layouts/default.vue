@@ -12,12 +12,12 @@
         <div id="bar3"></div>
       </div>
       <nav v-if="showNavMenu">
-        <a v-for="page in $store.getters.pages"
+        <nuxt-link v-for="page in $store.getters.pages"
           :key="page.id"
-          :href="page.slug"
+          :to="'/'+page.slug"
           class="nav-item">
           {{ page.title.rendered }}
-        </a>
+        </nuxt-link>
       </nav>
     </header>
     <nuxt/>
