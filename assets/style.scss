@@ -72,19 +72,30 @@ main {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-/* nav {
+nav {
   @supports (display: flex) {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  @media screen and (max-width: $break-small) {
+  /* @media screen and (max-width: $break-small) {
     width: 100%;
   }
   @media screen and (max-width: $break-medium) {
     display: none;
+  } */
+  clear: both;
+
+  .nav-item {
+    padding: 5px;
+    color: black;
+
+    &:hover {
+      color: red;
+    }
   }
-} */
+}
 
 footer {
   > a {
