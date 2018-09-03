@@ -35,12 +35,12 @@
 <script>
 export default {
   mounted() {
-    mounted ()
+    this.handleResize();
     window.addEventListener('resize', this.handleResize);
   },
   data() {
     return {
-      showNavMenu: true,
+      showNavMenu: undefined,
       toggleAnimation: false,
     };
   },
