@@ -3,6 +3,7 @@
     <h2>{{ title }}</h2>
     <div v-html="description"></div>
     <img :src="image_url" :alt="image_alt"/>
+    <nuxt-link :to="slug">Lees meer</nuxt-link>
     <hr>
   </section>
 </template>

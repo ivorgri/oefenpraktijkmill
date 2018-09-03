@@ -7,7 +7,7 @@
       :key="page.id"
       :title="page.title.rendered"
       :description="page.excerpt.rendered"
-      :slug="page.slug"></page-preview>
+      :slug="page.slug"/>
   </main>
 </template>
 
