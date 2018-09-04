@@ -17,7 +17,10 @@ export default {
       return this.$store.getters.getPage(this.$route.params.slug);
     },
     isContactPage() {
-      return this.$store.getters.isPageContactForm(this.page.id);
+      if(this.page) {
+        return this.page.acf.is_contactformulier;
+      }
+      return false;
     },
   }
 }
