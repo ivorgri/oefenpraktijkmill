@@ -51,6 +51,7 @@ export default {
     },
     handleResize() {
       if(document.documentElement.clientWidth > 649) {
+        this.toggleAnimation = false;
         this.showNavMenu = true;
       } else {
         this.showNavMenu = false;
