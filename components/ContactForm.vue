@@ -12,6 +12,7 @@
 
       <input type="submit" value="Verstuur verzoek">
       <span v-if="errorMessage">{{ errorMessage }}</span>
+      <span v-if="message">{{ message }}</span>
     </form>
 </template>
 
@@ -23,10 +24,13 @@ export default {
       firstname: '',
       lastname: '',
       errorMessage: '',
+      message: '',
+      submitting: false,
     };
   },
   methods: {
-    async onSubmit(e) {
+    async onSubmit() {
+      this.submitting = true;
       const data = {
         firstname: this.firstname,
         lastname: this.lastname,
@@ -44,7 +48,14 @@ export default {
         console.log('An error occured', error);
         this.errorMessage = 'Er is iets fout gegaan met het versturen van de mail. Probeer het nog eens. Mocht het nogmaals fout gaan, neem dan contact op met ...@...nl.';
       }
-      console.log('Response', response);
+      if(response === undefined) {
+        this.errorMessage = 'Er is iets fout gegaan met het versturen van de mail. Probeer het nog eens. Mocht het nogmaals fout gaan, neem dan contact op met ...@...nl.';
+      } else if (!response.success) {
+        this.errorMessage = response.errorMessage;
+      } else {
+        this.message = response.message;
+      }
+      this.submitting = false;
     },
   },
 }
