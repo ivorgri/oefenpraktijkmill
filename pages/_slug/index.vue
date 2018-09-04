@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-html="page.content.rendered"/>
+    <div v-if="page" v-html="page.content.rendered"/>
   </main>
 </template>
 
