@@ -27,7 +27,7 @@
       <address>
         Bedrijfsadres
       </address>
-      <nuxt-link to="/contact">Neem contact op</nuxt-link>
+      <nuxt-link to="/contact">Neem contact met ons op</nuxt-link>
     </footer>
   </div>
 </template>
