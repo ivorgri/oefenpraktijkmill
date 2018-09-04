@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      showNavMenu: undefined,
+      showNavMenu: false,
       toggleAnimation: false,
     };
   },

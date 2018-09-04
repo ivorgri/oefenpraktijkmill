@@ -14,6 +14,6 @@ export default {
       page = page[0];
     }
     return { page };
-  }
+  },
 }
 </script>
