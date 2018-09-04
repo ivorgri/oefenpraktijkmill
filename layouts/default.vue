@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      showNavMenu: false,
+      showNavMenu: undefined,
       toggleAnimation: false,
     };
   },
@@ -50,8 +50,6 @@ export default {
       this.toggleAnimation = this.showNavMenu;
     },
     handleResize() {
-      console.log('Doing this!');
-      console.log(document.documentElement.clientWidth);
       if(document.documentElement.clientWidth > 649) {
         this.showNavMenu = true;
       } else {
