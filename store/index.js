@@ -19,6 +19,9 @@ const createStore = () => {
           return a.menu_order - b.menu_order;
         });
       },
+      getPage: (state) => (slug) => {
+        return state.pages.find((page) => page.slug == slug);
+      }
     },
     actions: {
       async nuxtServerInit ({ commit }) {
