@@ -1,23 +1,25 @@
 <template>
-  <form v-on:submit.prevent="onSubmit">
+  <form id="contact-form" v-on:submit.prevent="onSubmit">
 
-      <label for="fname">Voornaam</label>
-      <input type="text" id="fname" name="firstname" placeholder="Uw voornaam" v-model="firstname"
-        :disabled="submitting">
+    <label class="contact-label" for="fname">Voornaam</label>
+    <input class="contact-input" type="text" id="fname" name="firstname" placeholder="Uw voornaam" v-model="firstname"
+      :disabled="submitting">
 
-      <label for="lname">Achternaam</label>
-      <input type="text" id="lname" name="lastname" placeholder="Uw achternaam" v-model="lastname"
-        :disabled="submitting">
+    <label class="contact-label" for="lname">Achternaam</label>
+    <input class="contact-input" type="text" id="lname" name="lastname" placeholder="Uw achternaam" v-model="lastname"
+      :disabled="submitting">
 
-      <label for="email">E-mail adres</label>
-      <input type="email" id="email" name="email" placeholder="E-mail adres" v-model="email"
-        :disabled="submitting">
+    <label class="contact-label" for="email">E-mail adres</label>
+    <input class="contact-input" type="email" id="email" name="email" placeholder="E-mail adres" v-model="email"
+      :disabled="submitting">
 
-      <input type="submit" value="Verstuur verzoek"
-        :disabled="submitting">
-      <span v-if="errorMessage">{{ errorMessage }}</span>
-      <span v-if="message">{{ message }}</span>
-    </form>
+    <input id="contact-submit" type="submit" value="Verstuur verzoek"
+      :disabled="submitting || invalidEntries">
+
+    <span v-if="errorMessage">{{ errorMessage }}</span>
+    <span v-if="message">{{ message }}</span>
+
+  </form>
 </template>
 
 <script>
@@ -31,6 +33,11 @@ export default {
       message: '',
       submitting: false,
     };
+  },
+  computed: {
+    invalidEntries() {
+      return (this.email===''||this.firstname===''||this.lastname==='');
+    }
   },
   methods: {
     async onSubmit() {
