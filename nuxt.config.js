@@ -61,8 +61,6 @@ module.exports = {
       return axios.get('http://oefenpraktijkmill.ivrdesign.nl/wp-json/wp/v2/pages')
       .then((res) => {
         return res.data.map((page) => {
-          console.log('PAGE');
-          console.log(page);
           return {
             route: `/${page.slug}`,
             payload: page
