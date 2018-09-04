@@ -2,15 +2,19 @@
   <form v-on:submit.prevent="onSubmit">
 
       <label for="fname">Voornaam</label>
-      <input type="text" id="fname" name="firstname" placeholder="Uw voornaam" v-model="firstname">
+      <input type="text" id="fname" name="firstname" placeholder="Uw voornaam" v-model="firstname"
+        :disabled="submitting">
 
       <label for="lname">Achternaam</label>
-      <input type="text" id="lname" name="lastname" placeholder="Uw achternaam" v-model="lastname">
+      <input type="text" id="lname" name="lastname" placeholder="Uw achternaam" v-model="lastname"
+        :disabled="submitting">
 
       <label for="email">E-mail adres</label>
-      <input type="email" id="email" name="email" placeholder="E-mail adres" v-model="email">
+      <input type="email" id="email" name="email" placeholder="E-mail adres" v-model="email"
+        :disabled="submitting">
 
-      <input type="submit" value="Verstuur verzoek">
+      <input type="submit" value="Verstuur verzoek"
+        :disabled="submitting">
       <span v-if="errorMessage">{{ errorMessage }}</span>
       <span v-if="message">{{ message }}</span>
     </form>
@@ -55,7 +59,6 @@ export default {
       } else {
         this.message = response.message;
       }
-      this.submitting = false;
     },
   },
 }
