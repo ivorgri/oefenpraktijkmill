@@ -1,8 +1,5 @@
 <template>
   <main>
-    <p>
-      Beschrijving
-    </p>
     <page-preview v-for="page in $store.getters.pages"
       :key="page.id"
       :title="page.title.rendered"
