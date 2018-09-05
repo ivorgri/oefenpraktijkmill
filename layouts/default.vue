@@ -22,10 +22,12 @@
     </header>
     <nuxt/>
     <footer>
-      <a href="mailto:">Verstuur e-mail</a>
-      <a href="tel:">Bel ons</a>
+      <a :href="`mailto:${address.emailadres}`">Verstuur e-mail</a>
+      <a :href="`tel:${address.telefoonnummer}`">Bel ons</a>
       <address>
-        Bedrijfsadres
+        {{ address.straatnaam }} {{address.huisnummer}} {{address.toevoegsel}}<br>
+        {{ address.postcode }} {{ address.plaatsnaam }}<br>
+        {{ address.land }}
       </address>
       <nuxt-link to="/contact">Neem contact met ons op</nuxt-link>
     </footer>
@@ -43,6 +45,11 @@ export default {
       showNavMenu: undefined,
       toggleAnimation: false,
     };
+  },
+  computed: {
+    address() {
+      return this.$store.getters.getAddress;
+    },
   },
   methods: {
     toggleNavMenu () {
