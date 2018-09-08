@@ -1,6 +1,6 @@
 <template>
   <main id="main">
-    <page-preview v-for="page in $store.getters.pages"
+    <test-page-preview v-for="page in $store.getters.pages"
       :key="page.id"
       :title="page.title.rendered"
       :excerpt="page.excerpt.rendered"
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import PagePreview from '~/components/PagePreview.vue'
+import TestPagePreview from '~/components/TestPagePreview.vue'
 
 export default {
   layout: 'test',
   components: {
-    PagePreview,
+    TestPagePreview,
   },
 }
 </script>
