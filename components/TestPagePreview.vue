@@ -1,11 +1,15 @@
 <template>
   <section :id="slug">
-    <h2>{{ title }}</h2>
-    <div v-if="homepageText" v-html="homepageText"></div>
-    <div v-if="!homepageText" v-html="excerpt"></div>
-    <img :src="imageUrl" :alt="imageAlt"/>
-    <nuxt-link :to="slug">Lees meer</nuxt-link>
-    <hr>
+    <div class="content">
+      <h2>{{ title }}</h2>
+      <div v-if="homepageText" v-html="homepageText"></div>
+      <div v-if="!homepageText" v-html="excerpt"></div>
+      <nuxt-link :to="slug">Lees meer</nuxt-link>
+    </div>
+    <div class="lead-image">
+      <!-- <img :src="imageUrl" :alt="imageAlt"/> -->
+      <div>Afbeelding hier</div>
+    </div>
   </section>
 </template>
 
