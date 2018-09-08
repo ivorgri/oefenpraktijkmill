@@ -1,7 +1,7 @@
 import Vuex from 'vuex';
 import axios from 'axios';
 
-const pagesApi = 'https://oefenpraktijkmill.ivrdesign.nl/wp-json/wp/v2/pages';
+const pagesApi = 'https://oefenpraktijkmill.ivrdesign.nl/wp-json/wp/v2/pages?_embed';
 const addressesApi = 'https://oefenpraktijkmill.ivrdesign.nl/wp-json/wp/v2/addresses';
 
 const createStore = () => {

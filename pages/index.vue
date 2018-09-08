@@ -4,7 +4,8 @@
       :key="page.id"
       :title="page.title.rendered"
       :excerpt="page.excerpt.rendered"
-      :homepage_text="page.acf.homepage_tekst"
+      :homepageText="page.acf.homepage_tekst"
+      :image="page._embedded['wp:featuredmedia']"
       :slug="page.slug"/>
   </main>
 </template>
