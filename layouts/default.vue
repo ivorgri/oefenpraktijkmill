@@ -71,3 +71,84 @@ export default {
 }
 </script>
 
+<style lang="scss">
+  @import '~assets/variables.scss';
+
+  .title {
+    width: 275px;
+    min-width: 275px;
+    float: left;
+  }
+
+  #dropdown-menu {
+    @media screen and (min-width: $break-medium) {
+      display: none;
+    }
+    cursor: pointer;
+    float: right;
+    margin: 18px 15px;
+  }
+
+  #bar1, #bar2, #bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change #bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change #bar2 {opacity: 0;}
+
+  .change #bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  nav {
+    @supports (display: flex) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    /* @media screen and (max-width: $break-small) {
+      width: 100%;
+    }
+    @media screen and (max-width: $break-medium) {
+      display: none;
+    } */
+    clear: both;
+
+    .nav-item {
+      padding: 5px;
+      color: black;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  footer {
+    clear: both;
+
+    > a {
+      width: 100%;
+      @supports (display: flex) {
+        width: auto;
+      }
+    }
+    @supports (display: flex) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+    }
+  }
+</style>
+

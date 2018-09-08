@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section :id="slug">
     <h2>{{ title }}</h2>
     <div v-if="homepageText" v-html="homepageText"></div>
     <div v-if="!homepageText" v-html="excerpt"></div>
