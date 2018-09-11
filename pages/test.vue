@@ -1,12 +1,12 @@
 <template>
   <main id="main"
     :style="templateRows">
-    <test-page-preview v-for="(page, index) in $store.getters.pages"
+    <test-page-preview v-for="(page, index) in $store.getters.subPages"
       :key="page.id"
       :title="page.title.rendered"
       :excerpt="page.excerpt.rendered"
       :homepageText="page.acf.homepage_tekst"
-      :image="page._embedded['wp:featuredmedia']"
+      :image="pageImage(page)"
       :slug="page.slug"
       :style="setStartingRow(index)"/>
   </main>
@@ -24,7 +24,7 @@ export default {
     templateRows() {
       const imageOverlap = '30px'
       let templateRows = `${imageOverlap} auto ${imageOverlap}`;
-      for (let i = 1; i < this.$store.getters.pages.length; i++) {
+      for (let i = 1; i < this.$store.getters.subPages.length; i++) {
         templateRows += ` auto ${imageOverlap}`;
       }
       return {
@@ -39,6 +39,14 @@ export default {
         'grid-row': `${startingRow} / span 3`,
       }
     },
+    pageImage(page) {
+      const images = page['_embedded']['wp:featuredmedia'];
+      if(images) {
+        return images[0].media_details.sizes.medium_large;
+      }
+      return {};
+
+    }
   },
 }
 </script>
@@ -66,10 +74,9 @@ export default {
         width: 40%;
         height: 300px;
 
-        > div {
+        > img {
           background-color: red;
           height: 100%;
-          width: 100%;
         }
       }
     }

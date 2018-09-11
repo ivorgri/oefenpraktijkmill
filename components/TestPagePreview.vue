@@ -7,8 +7,7 @@
       <nuxt-link :to="slug">Lees meer</nuxt-link>
     </div>
     <div class="lead-image">
-      <!-- <img :src="imageUrl" :alt="imageAlt"/> -->
-      <div>Afbeelding hier</div>
+      <img :src="imageUrl" :alt="imageAlt"/>
     </div>
   </section>
 </template>
@@ -38,10 +37,10 @@ export default {
   },
   computed: {
     imageUrl() {
-      return (this.image ? this.image[0].media_details.sizes.medium_large.source_url: '');
+      return (this.image ? this.image.source_url: '');
     },
     imageAlt() {
-      return (this.image ? this.image[0].alt_test: '');
+      return (this.image ? this.image.alt_test: '');
     },
   }
 }

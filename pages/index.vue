@@ -1,6 +1,6 @@
 <template>
   <main>
-    <page-preview v-for="page in $store.getters.pages"
+    <page-preview v-for="page in $store.getters.subPages"
       :key="page.id"
       :title="page.title.rendered"
       :excerpt="page.excerpt.rendered"

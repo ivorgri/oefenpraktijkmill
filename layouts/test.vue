@@ -1,7 +1,7 @@
 <template>
   <div id="main-content">
     <header>
-      <img id="header-image" src="https://oefenpraktijkmill.ivrdesign.nl/wp-content/uploads/2018/09/active-aerobic-beauty-866019-2000x1200.jpg"/>
+      <img id="header-image" :src="homepageImageUrl" :alt="homepageImageAlt"/>
       <h1 id="header-title">Oefenpraktijk Dianne van Dongen</h1>
       <button id="header-button-1" class="header-button" @click="scrollTo('contact')">Inschrijven</button>
       <button id="header-button-2" class="header-button" @click="scrollTo('main')">Informatie</button>
@@ -25,6 +25,15 @@ export default {
   computed: {
     address() {
       return this.$store.getters.getAddress;
+    },
+    homepageImage() {
+      return this.$store.getters.getHomepage["_embedded"]["wp:featuredmedia"][0].media_details.sizes["twentyseventeen-featured-image"];
+    },
+    homepageImageUrl() {
+      return (this.homepageImage.source_url ? this.homepageImage.source_url : '');
+    },
+    homepageImageAlt() {
+      return (this.homepageImage.alt_text ? this.homepageImage.alt_text: '');
     },
   },
   methods: {

@@ -19,11 +19,11 @@ const createStore = () => {
       },
     },
     getters: {
-      getHomePage: state => {
+      getHomepage: state => {
         return state.pages.find((page) => page.parent === 0);
       },
-      pages: state => {
-        const subPages = state.pages.find((page) => page.parent !== 0);
+      subPages: state => {
+        const subPages = state.pages.filter((page) => page.parent !== 0);
         return subPages.sort((a, b) => {
           return a.menu_order - b.menu_order;
         });
@@ -31,7 +31,7 @@ const createStore = () => {
       getPage: (state) => (slug) => {
         return state.pages.find((page) => page.slug === slug);
       },
-      getAddress (state) {
+      getAddress: state => {
         return state.address;
       },
     },
