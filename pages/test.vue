@@ -45,7 +45,6 @@ export default {
         return images[0].media_details.sizes.medium_large;
       }
       return {};
-
     }
   },
 }

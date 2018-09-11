@@ -27,7 +27,7 @@ export default {
       required: true,
     },
     image: {
-      type: Array,
+      type: Object,
       required: false,
     },
     slug: {
