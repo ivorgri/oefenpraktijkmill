@@ -5,7 +5,7 @@ author: admin
 post_excerpt: ""
 layout: page
 permalink: >
-  http://oefenpraktijkmill.ivrdesign.nl/je-oefentherapeut/
+  https://oefenpraktijkmill.ivrdesign.nl/homepage/je-oefentherapeut/
 published: true
 post_date: 2018-08-30 19:47:41
 ---

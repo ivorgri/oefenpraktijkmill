@@ -5,7 +5,8 @@ author: admin
 post_excerpt: ""
 layout: page
 permalink: >
-  http://oefenpraktijkmill.ivrdesign.nl/praktijkgegevens/
+  https://oefenpraktijkmill.ivrdesign.nl/homepage/praktijkgegevens/
 published: true
 post_date: 2018-08-31 19:34:50
 ---
+Onze praktijk

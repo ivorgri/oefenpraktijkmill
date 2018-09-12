@@ -5,7 +5,7 @@ author: admin
 post_excerpt: ""
 layout: page
 permalink: >
-  http://oefenpraktijkmill.ivrdesign.nl/oefentherapie-mensendieck/
+  https://oefenpraktijkmill.ivrdesign.nl/homepage/oefentherapie-mensendieck/
 published: true
 post_date: 2018-08-27 18:57:21
 ---
