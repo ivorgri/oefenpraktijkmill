@@ -46,6 +46,8 @@ export default {
 </script>
 
 <style lang="scss">
+  @import '~assets/variables.scss';
+
   header {
     display: grid;
     grid-template-columns: [start-col] 1fr 1fr 1fr 1fr [end-col];
@@ -67,6 +69,19 @@ export default {
     grid-area: start-row / start-col / end-row / end-col;
     width: 100vw;
     filter: opacity(80%) grayscale(25%);
+  }
+
+  @supports (filter: opacity(80%)) and (filter: grayscale(25%)) {
+    #header-image {
+      filter: opacity(80%) grayscale(25%);
+    }
+  }
+
+  @supports (clip-path: polygon($header-image-clip-path)) or (-webkit-clip-path: polygon($header-image-clip-path)) {
+    header {
+      -webkit-clip-path: polygon($header-image-clip-path);
+      clip-path: polygon($header-image-clip-path);
+    }
   }
 
   #header-title {
