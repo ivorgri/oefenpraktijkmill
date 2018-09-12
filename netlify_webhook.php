@@ -18,7 +18,7 @@
       add_action('deleted_post', array( $this , 'start_build'));
       add_action('trashed_post', array( $this , 'start_build'));
       add_action('untrashed_post', array( $this , 'start_build'));
-      add_action('edit_post', array( $this , 'start_build'));
+      add_action('save_post', array( $this , 'start_build'));
     }
 
     public function create_plugin_settings_page() {
