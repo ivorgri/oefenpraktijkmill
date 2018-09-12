@@ -98,7 +98,7 @@ export default {
     }
   }
 
-  @supports (clip-path: polygon($lead-image-clip-path-odd)) or (-webkit-clip-path: polygon($lead-image-clip-path-odd)) {
+  /* @supports (clip-path: polygon($lead-image-clip-path-odd)) or (-webkit-clip-path: polygon($lead-image-clip-path-odd)) {
     section:nth-child(odd) {
       > .lead-image {
         -webkit-clip-path: polygon($lead-image-clip-path-odd);
@@ -114,6 +114,5 @@ export default {
         clip-path: polygon($lead-image-clip-path-even);
       }
     }
-  }
-
+  } */
 </style>
